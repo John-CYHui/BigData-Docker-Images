@@ -14,7 +14,7 @@
   * [3.1 Spark Installation](#31-spark-installation)
   * [3.2 Start Spark clusters](#32-start-spark-clusters)
   * [3.3 Test Spark Standalone mode](#33-test-spark-standalone-mode)
-  
+- [4. Docker image link](#4-docker-image-link)
 # Introduction
 
 The purpose of this repository is to setup virtual clusters on a single machine for learning big-data tools.
@@ -985,3 +985,17 @@ sc.parallelize([1,2,3,4,5]).map(lambda x: x + 1).collect()
 ```
 
 ![image-20220804103924331](/images/spark_standalone.png)
+
+# 4. Docker image link
+
+1. Hadoop ready image
+
+   https://hub.docker.com/repository/docker/johnhui/hadoopinstalled
+
+2. Hive ready image
+
+   https://hub.docker.com/repository/docker/johnhui/hiveinstalled
+
+3. Spark ready image
+
+   https://hub.docker.com/repository/docker/johnhui/sparkinstalled
