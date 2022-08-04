@@ -1,8 +1,20 @@
 # Table of Contents
+- [Build Hadoop Docker Image](#build-hadoop-docker-image)
+  * [1.1 Hadoop Installation](#11-hadoop-installation)
+  * [1.2 Setup Hadoop clusters](#12-setup-hadoop-clusters)
+  * [1.3 Start Hadoop clusters](#13-start-hadoop-clusters)
+  * [1.4 TODO](#14-todo)
+  * [1.5 Test Hadoop grep example](#15-test-hadoop-grep-example)
+- [2. Build Hive Docker Image](#2-build-hive-docker-image)
+  * [2.1 Hive Installation](#21-hive-installation)
+  * [2.2 Setup Hive clusters](#22-setup-hive-clusters)
+  * [2.3 Start Hive clusters](#23-start-hive-clusters)
+- [3. Build Spark Docker Image](#3-build-spark-docker-image)
+  * [3.1 Spark Installation](#31-spark-installation)
+  * [3.2 Start Spark clusters](#32-start-spark-clusters)
+  * [3.3 Test Spark Standalone mode](#33-test-spark-standalone-mode)
 
-[TOC]
-
-# 1. Build Hadoop Docker Image
+# Build Hadoop Docker Image
 
 ## 1.1 Hadoop Installation
 
@@ -14,9 +26,9 @@
 
 2.  Run ubuntu image and link local disk to ubuntu container
 
-   ```shell
-   docker run -it -v C:\hadoop\build:/root/build --name ubuntu ubuntu
-   ```
+    ```shell
+    docker run -it -v C:\hadoop\build:/root/build --name ubuntu ubuntu
+    ```
 
 3. Enter ubuntu container and update necessary components 
 
@@ -55,7 +67,7 @@
    # Example:
    ```
 
-   ![image-20220803184446255](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\ssh_connection.png)
+   ![image-20220803184446255](/images/ssh_connection.png)
 
 7. Install java JDK
 
@@ -310,7 +322,7 @@
    # Example
    ```
 
-   ![image-20220803205511246](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\ip_hosts_example.png)
+   ![image-20220803205511246](/images/ip_hosts_example.png)
 
 10. Open the workers file in master container
 
@@ -323,7 +335,7 @@
     # Example
     ```
 
-    ![image-20220803205936807](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\workers.png)
+    ![image-20220803205936807](/images/workers.png)
 
 11. Test to see if master can enter slave01 and slave02 without password 
 
@@ -333,9 +345,9 @@
     # Example
     ```
 
-    ![image-20220803210337631](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\ssh_slave01.jpg)
+    ![image-20220803210337631](/images/ssh_slave01.jpg)
 
-    ![image-20220803211116028](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\ssh_slave02.jpg)
+    ![image-20220803211116028](/images/ssh_slave02.jpg)
 
 ## 1.3 Start Hadoop clusters
 
@@ -353,11 +365,11 @@
 
 3. Enter jps to check if the corresponding java processes have started successfully
 
-![image-20220803211621660](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\master_jps.png)
+![image-20220803211621660](/images/master_jps.png)
 
-![image-20220803211658947](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\slave01_jps.png)
+![image-20220803211658947](/images/slave01_jps.png)
 
-![image-20220803211734165](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\slave02_jps.png)
+![image-20220803211734165](/images/slave02_jps.png)
 
 3. To properly use the WEB UI, need to modify hosts file.
 
@@ -386,11 +398,11 @@
 
 1. HDFS WEB UI upload has problem
 
-   ![image-20220803212604079](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\hdfs_upload.png)
+   ![image-20220803212604079](/images/hdfs_upload.png)
 
 2. HDFS WEB UI make folders has problem
 
-   ![image-20220803212736367](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\hdfs_mkdir.png)
+   ![image-20220803212736367](/images/hdfs_mkdir.png)
 
 ## 1.5 Test Hadoop grep example
 
@@ -458,7 +470,7 @@ hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep /user/h
    mysql --version
    ```
 
-   ![image-20220803214235469](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\mysql_version.png)
+   ![image-20220803214235469](/images/mysql_version.png)
 
 6. Extract Hive package
 
@@ -643,7 +655,7 @@ hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep /user/h
    # Example
    ```
 
-   ![image-20220803205511246](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\ip_hosts_example.png)
+   ![image-20220803205511246](/images/ip_hosts_example.png)
 
 3. Open the workers file in master container
 
@@ -656,7 +668,7 @@ hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep /user/h
    # Example
    ```
 
-   ![image-20220803205936807](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\workers.png)
+   ![image-20220803205936807](/images/workers.png)
 
 4. Enter master container and start mysql
 
@@ -700,9 +712,9 @@ hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep /user/h
 
    Should see the followings if metastore and hiveserver2 have started properly
 
-   ![image-20220804092739739](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\hive_metastore_port.png)
+   ![image-20220804092739739](/images/hive_metastore_port.png)
 
-   ![image-20220804092831807](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\hiveserver2.png)
+   ![image-20220804092831807](/images/hiveserver2.png)
 
    
 
@@ -718,7 +730,7 @@ hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep /user/h
    # Enter root as username; no need to enter password
    ```
 
-   ![image-20220804093303295](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\connect_metastore.png)
+   ![image-20220804093303295](/images/connect_metastore.png)
 
 # 3. Build Spark Docker Image
 
@@ -788,7 +800,7 @@ hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep /user/h
    conda activate pyspark
    ```
 
-   ![image-20220804095615061](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\activate_pyspark_env.png)
+   ![image-20220804095615061](/images/activate_pyspark_env.png)
 
 6. Install necessary python packages
 
@@ -965,4 +977,4 @@ bin/pyspark --master spark://master:7077
 sc.parallelize([1,2,3,4,5]).map(lambda x: x + 1).collect()
 ```
 
-![image-20220804103924331](C:\Users\tclre\Documents\John\big_data_setup_instruction\images\spark_standalone.png)
+![image-20220804103924331](/images/spark_standalone.png)
