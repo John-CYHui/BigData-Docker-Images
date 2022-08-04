@@ -1,5 +1,6 @@
 # Table of Contents
-- [Build Hadoop Docker Image](#build-hadoop-docker-image)
+- [Introduction](#introduction)
+- [1. Build Hadoop Docker Image](#1-build-hadoop-docker-image)
   * [1.1 Hadoop Installation](#11-hadoop-installation)
   * [1.2 Setup Hadoop clusters](#12-setup-hadoop-clusters)
   * [1.3 Start Hadoop clusters](#13-start-hadoop-clusters)
@@ -13,8 +14,14 @@
   * [3.1 Spark Installation](#31-spark-installation)
   * [3.2 Start Spark clusters](#32-start-spark-clusters)
   * [3.3 Test Spark Standalone mode](#33-test-spark-standalone-mode)
+  
+# Introduction
 
-# Build Hadoop Docker Image
+The purpose of this repository is to setup virtual clusters on a single machine for learning big-data tools.
+
+The clusters design is 1 master + 2 slaves. 
+
+# 1. Build Hadoop Docker Image
 
 ## 1.1 Hadoop Installation
 
